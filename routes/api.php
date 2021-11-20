@@ -2,6 +2,8 @@
 
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
+    use Laravel\Octane\Facades\Octane;
+    use Symfony\Component\HttpFoundation\Response;
 
     /*
     |--------------------------------------------------------------------------
@@ -17,3 +19,5 @@
     Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
     });
+    Octane::route("GET", "prueba", fn() => new Response("welcome")
+    );

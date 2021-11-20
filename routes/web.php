@@ -1,6 +1,8 @@
 <?php
 
     use Illuminate\Support\Facades\Route;
+    use Laravel\Octane\Facades\Octane;
+    use Symfony\Component\HttpFoundation\Response;
 
     /*
     |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@
     Route::get('/', function () {
         return view('welcome');
     });
+
+    Octane::route("GET", "/prueba", fn() => new Response("COn golang")
+    );
